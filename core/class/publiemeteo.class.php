@@ -43,8 +43,7 @@ class publiemeteo extends eqLogic {
 			$post['dateutc'] = date('Y-m-d H:i:s');
 			date_default_timezone_set($OldTZ);
 			// Get Plugin info
-			$plugin = plugin::byId('publiemeteo');
-			$post['softwaretype'] = 'Jeedom publiemeteo '.$plugin->getVersion();
+			$post['softwaretype'] = 'Jeedom publiemeteo';
 			log::add('publiemeteo','debug','Prepare les données');
 			foreach (array("tempf temp 1.8 32",
 						"baromin pression 0.000295299",

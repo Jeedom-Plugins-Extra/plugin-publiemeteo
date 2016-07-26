@@ -43,10 +43,12 @@ class publiemeteo extends eqLogic {
 			$post['dateutc'] = date('Y-m-d H:i:s');
 			date_default_timezone_set($OldTZ);
 			// Get Plugin info
+			$data_to_send = false;
+			$plugin = plugin::byId('publiemeteo');
 			$post['softwaretype'] = 'Jeedom publiemeteo';
 			log::add('publiemeteo','debug','Prepare les données');
 			foreach (array("tempf temp 1.8 32",
-						"baromin pression 0.000295299",
+						"baromin pression 0.000295299 0",
 						"humidity humidite 1 0",
 						"dailyrainin pluie 1 0",
 						"rainin pluieheure 1 0",
@@ -61,25 +63,35 @@ class publiemeteo extends eqLogic {
 					$cmd = cmd::byId($cmd_id);
 					if ( is_object($cmd) ) {
 						$cmd->execCmd();
-						if ( time() - strtotime($cmd->getCollectDate()) < 300 )
+						if ( time() - strtotime($cmd->getCollectDate()) < 900 )
 						{
+							$data_to_send = true;
 							if ( $indice == "vent" ) {
 								$data = $cmd->getStatistique(date('Y-m-d H:i:s', time() - 600), date('Y-m-d H:i:s'));
-								$post[$key] = $data["avg"] * $coef + $add;
+								$value = $data["avg"];
 							} else {
-								$post[$key] = $cmd->execCmd(null, 2) * $coef + $add;
+								$value = $cmd->execCmd(null, 2);
 							}
+							$post[$key] = $value * $coef + $add;
+							log::add('publiemeteo','debug', $key.' : '.$value.' => '.$post[$key]);
 						}
 					}
 				}
 			}
-			$url = 'http://weatherstation.wunderground.com/weatherstation/updateweatherstation.php?'.http_build_query($post);
-			log::add('publiemeteo','debug','Envoie des donnees via '.preg_replace("/PASSWORD=[^&]*&/", "PASSWORD=XXXXX&", $url));
-			$content = @file_get_contents($url);
-			if ( $content != "success\n" )
+			if ( $data_to_send )
 			{
-				log::add('publiemeteo','error',__('Impossible d\'envoyer les données au serveur wunderground.com.',__FILE__)." Message #".$content."#");
-				throw new Exception(__('Impossible d\'envoyer les données au serveur wunderground.com.', __FILE__));
+				$url = 'http://weatherstation.wunderground.com/weatherstation/updateweatherstation.php?'.http_build_query($post);
+				log::add('publiemeteo','debug','Envoie des donnees via '.preg_replace("/PASSWORD=[^&]*&/", "PASSWORD=XXXXX&", $url));
+				$content = @file_get_contents($url);
+				if ( $content != "success\n" )
+				{
+					log::add('publiemeteo','error',__('Impossible d\'envoyer les données au serveur wunderground.com.',__FILE__)." Message #".$content."#");
+					throw new Exception(__('Impossible d\'envoyer les données au serveur wunderground.com.', __FILE__));
+				}
+			}
+			else
+			{
+				log::add('publiemeteo','debug','Aucune donnée récente a envoyer');
 			}
 		}
 	}

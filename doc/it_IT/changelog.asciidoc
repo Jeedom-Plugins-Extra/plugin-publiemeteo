@@ -1,0 +1,2 @@
+[horizontal]
+1.0:: Initialisation du plugin.

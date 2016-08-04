@@ -36,7 +36,7 @@ switch (init('format')) {
 					$cmd->execCmd();
 					if ( time() - strtotime($cmd->getCollectDate()) < 300 )
 					{
-						if ( $indicateur[1] == "pluie" ) {
+						if ( $indice == "pluie" ) {
 							print(strtr($cmd_id->getStatistique(mktime(0,0,0), time())["avg"], '.', ','));
 						} else {
 							print(strtr($cmd->execCmd(null, 2), '.', ','));

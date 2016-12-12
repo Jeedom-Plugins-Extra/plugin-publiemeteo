@@ -39,7 +39,7 @@ switch (init('format')) {
 						if ( $indice == "pluie" ) {
 							print(strtr($cmd_id->getStatistique(mktime(0,0,0), time())["avg"], '.', ','));
 						} else {
-							print(strtr($cmd->execCmd(null, 2), '.', ','));
+							print(strtr($cmd->execCmd(), '.', ','));
 						}
 					}
 				}

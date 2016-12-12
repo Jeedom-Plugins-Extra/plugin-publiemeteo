@@ -70,7 +70,7 @@ class publiemeteo extends eqLogic {
 								$data = $cmd->getStatistique(date('Y-m-d H:i:s', time() - 600), date('Y-m-d H:i:s'));
 								$value = $data["avg"];
 							} else {
-								$value = $cmd->execCmd(null, 2);
+								$value = $cmd->execCmd();
 							}
 							$post[$key] = $value * $coef + $add;
 							log::add('publiemeteo','debug', $key.' : '.$value.' => '.$post[$key]);

@@ -85,6 +85,14 @@ class publiemeteo extends eqLogic {
 				$content = @file_get_contents($url);
 				if ( $content != "success\n" )
 				{
+					$content = @file_get_contents($url);
+					if ( $content != "success\n" )
+					{
+						$content = @file_get_contents($url);
+					}
+				}
+				if ( $content != "success\n" )
+				{
 					log::add('publiemeteo','error',__('Impossible d\'envoyer les données au serveur wunderground.com.',__FILE__)." Message #".$content."#");
 					throw new Exception(__('Impossible d\'envoyer les données au serveur wunderground.com.', __FILE__));
 				}

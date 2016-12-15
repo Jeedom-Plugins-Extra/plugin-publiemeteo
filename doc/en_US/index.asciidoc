@@ -1,4 +1,4 @@
-== Publie Météo
+== Weather ad
 
 === Description
 Le plugin Publie Météo permet de mettre à disposition d'autres sites les informations météo de votre domotique.

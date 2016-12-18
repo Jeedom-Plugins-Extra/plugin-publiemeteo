@@ -1,5 +1,5 @@
 [panel,primary]
-.Peut on avoir d'autres formats ?
+. Can we have other formats?
 --
 Oui il suffit de demander en passant par le forum.
 --

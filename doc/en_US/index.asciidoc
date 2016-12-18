@@ -23,7 +23,7 @@ link:https://www.wunderground.com/personal-weather-station/dashboard?ID=IHAUTENO
 - Sur www.awekas.at
 link:http://www.awekas.at/fr/instrument.php?id=13215[]
 
-=== Configuration
+=== Settings
 include::configuration.asciidoc[]
 
 === FAQ

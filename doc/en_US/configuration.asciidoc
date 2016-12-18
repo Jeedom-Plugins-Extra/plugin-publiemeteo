@@ -1,4 +1,4 @@
-﻿Pour le configurer c’est très simple il suffit de selectionne les commandes contenant les indicateurs.
+To configure it it is very simple simply select the commands containing the indicators.
 
 image::../images/publiemeteo_screenshot2.jpg[]
 
@@ -28,7 +28,7 @@ C'est dans le menu de profile "My Weather Stations" => "Add a New PWS"
 
 Il faudra ensuite renseigner le Station ID et le mot de passe dans la page de paramétrage du plugin.
 
-=== Comment créer une station chez station-meteo ===
+=== How to create a workstation at weather station ===.
 
 Il faut aller link:http://ma.station-meteo.com/register/[ici]. Une fois connecter remplir le formulaire d'inscription. Ensuite dans le menu données, il faut paramétrer comme suit :
 

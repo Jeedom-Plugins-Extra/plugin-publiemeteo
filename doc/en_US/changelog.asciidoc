@@ -1,2 +1,2 @@
 [horizontal]
-1.0:: Initialisation du plugin.
+1.0: initialization of the plugin.

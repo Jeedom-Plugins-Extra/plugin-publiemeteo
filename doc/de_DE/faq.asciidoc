@@ -4,7 +4,7 @@
 Oui il suffit de demander en passant par le forum.
 --
 
-.A quelle fréquence les données sont-elles mise à jour ?
+.Wie oft werden die Daten aktualisiert?
 --
 Les données sont mises à jour en permanence. Celà dépend donc de la fréquence de mise à jour du site.
 Pour wunderground.com elles sont envoyées toutes les 15 minutes.

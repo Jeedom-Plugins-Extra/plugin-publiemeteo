@@ -1,2 +1,10 @@
-[horizontal]
-1.0:: Initialisierung des Plugins.
+WARNING: Detail complet des mises à jour sur https://github.com/guenneguezt/plugin-publiemeteo/commits/master[Historique Commit]
+
+Liste des évolutions majeures de la version courante :
+
+- Modification pour compatibilité Jeedom V3
+- Plus de suivi de version
+
+Anciennes évolutions :
+
+- Initialisation du plugin.

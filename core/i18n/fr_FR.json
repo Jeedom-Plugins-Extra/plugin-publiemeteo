@@ -9,8 +9,6 @@
     "plugins\/publiemeteo\/plugin_info\/configuration.php": {
         "Clef API": "Clef API",
         "Reset": "Reset",
-        "Faire un don au développeur": "Faire un don au développeur",
-        "Faire un don via Paypal au développeur": "Faire un don via Paypal au développeur",
         "Etes-vous sûr de vouloir forcer la génération d\\'une nouvelle clef API ?": "Etes-vous sûr de vouloir forcer la génération d\\'une nouvelle clef API ?",
         "Mise a jour de clef API OK": "Mise a jour de clef API OK"
     },

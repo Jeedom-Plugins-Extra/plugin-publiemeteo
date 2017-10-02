@@ -34,15 +34,24 @@ switch (init('format')) {
 				$cmd = cmd::byId($cmd_id);
 				if ( is_object($cmd) ) {
 					$cmd->execCmd();
-					if ( time() - strtotime($cmd->getCollectDate()) < 300 )
+					if ( time() - strtotime($cmd->getCollectDate()) < 3600 )
 					{
 						if ( $indice == "pluie" ) {
-							print(strtr($cmd_id->getStatistique(mktime(0,0,0), time())["avg"], '.', ','));
+							print(strtr($cmd->getStatistique(mktime(0,0,0), time())["avg"], ',', '.'));
 						} else {
-							print(strtr($cmd->execCmd(), '.', ','));
+							log::add('publiemeteo','debug',__('Donnée ', __FILE__).$indice.' : '.$cmd->execCmd());
+							print(strtr($cmd->execCmd(), ',', '.'));
 						}
 					}
+					else
+					{
+						log::add('publiemeteo','debug',__('Donnée trop vieille pour ', __FILE__).$indice.' : '.$cmd->getCollectDate());
+					}
 				}
+			}
+			else
+			{
+				log::add('publiemeteo','debug',__('Aucune commande définie pour ', __FILE__).$indice);
 			}
 			print("\n");
 		}
@@ -55,7 +64,7 @@ switch (init('format')) {
 				$cmd->execCmd();
 				if ( time() - strtotime($cmd->getCollectDate()) < 300 )
 				{
-					# print(strtr($cmd_id->getValue() - $cmd_id->getValue(time() - 6 * 3600), '.', ','));
+					# print(strtr($cmd_id->getValue() - $cmd_id->getValue(time() - 6 * 3600), ',', '.'));
 				}
 			}
 		}

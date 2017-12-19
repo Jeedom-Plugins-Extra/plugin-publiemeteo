@@ -1,16 +1,16 @@
 {
     "plugins\/publiemeteo\/plugin_info\/info.xml": {
         "Plugin pour mettre a disposition les informations météo pour d'autres sites": "Plugin pour mettre a disposition les informations météo pour d'autres sites",
-        "Aucune": "Aucune"
+        "Aucune": "Keine"
     },
     "plugins\/publiemeteo\/core\/php\/publiemeteo.php": {
         "Quelqu'un demande la meteo format ": "Quelqu'un demande la meteo format "
     },
     "plugins\/publiemeteo\/plugin_info\/configuration.php": {
-        "Clef API": "Clef API",
+        "Clef API": "API Schlüssel",
         "Reset": "Reset",
-        "Etes-vous sûr de vouloir forcer la génération d\\'une nouvelle clef API ?": "Etes-vous sûr de vouloir forcer la génération d\\'une nouvelle clef API ?",
-        "Mise a jour de clef API OK": "Mise a jour de clef API OK"
+        "Etes-vous sûr de vouloir forcer la génération d\\'une nouvelle clef API ?": "Möchten Sie die Generierung eines neuen API-Schlüssels wirklich erzwingen?",
+        "Mise a jour de clef API OK": " API-Schlüssel Aktualisieren OK"
     },
     "plugins\/publiemeteo\/core\/class\/publiemeteo.class.php": {
         "Impossible d'envoyer les données au serveur wunderground.com.": "Impossible d'envoyer les données au serveur wunderground.com."

@@ -1,25 +1,25 @@
 {
     "plugins\/publiemeteo\/plugin_info\/info.xml": {
-        "Plugin pour mettre a disposition les informations météo pour d'autres sites": "Plugin pour mettre a disposition les informations météo pour d'autres sites",
-        "Aucune": "Aucune"
+        "Plugin pour mettre a disposition les informations météo pour d'autres sites": "Plugin para hacer que la información meteorológica esté disponible para otros sitios",
+        "Aucune": "Ninguno"
     },
     "plugins\/publiemeteo\/core\/php\/publiemeteo.php": {
-        "Quelqu'un demande la meteo format ": "Quelqu'un demande la meteo format "
+        "Quelqu'un demande la meteo format ": "Alguien está demandadno el formato meteo "
     },
     "plugins\/publiemeteo\/plugin_info\/configuration.php": {
-        "Clef API": "Clef API",
+        "Clef API": "Clave API",
         "Reset": "Reset",
-        "Etes-vous sûr de vouloir forcer la génération d\\'une nouvelle clef API ?": "Etes-vous sûr de vouloir forcer la génération d\\'une nouvelle clef API ?",
-        "Mise a jour de clef API OK": "Mise a jour de clef API OK"
+        "Etes-vous sûr de vouloir forcer la génération d\\'une nouvelle clef API ?": "¿Está seguro de que desea forzar la generación de una nueva clave API?",
+        "Mise a jour de clef API OK": "Actualización de la clave API OK"
     },
     "plugins\/publiemeteo\/core\/class\/publiemeteo.class.php": {
-        "Impossible d'envoyer les données au serveur wunderground.com.": "Impossible d'envoyer les données au serveur wunderground.com."
+        "Impossible d'envoyer les données au serveur wunderground.com.": "No se pueden enviar datos al servidor wunderground. com."
     },
     "plugins\/publiemeteo\/desktop\/php\/publiemeteo.php": {
-        "Indicateur": "Indicateur",
-        "Commande associé": "Commande associé"
+        "Indicateur": "Indicador",
+        "Commande associé": "Comando asociado"
     },
     "plugins\/publiemeteo\/desktop\/js\/publiemeteo.js": {
-        "Sauvegarde réalisée avec succès": "Sauvegarde réalisée avec succès"
+        "Sauvegarde réalisée avec succès": "Salvado completado con éxito"
     }
 }

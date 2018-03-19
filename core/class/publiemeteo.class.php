@@ -16,16 +16,10 @@
  * along with Jeedom. If not, see <http://www.gnu.org/licenses/>.
  */
 
-/* * ***************************Includes********************************* */
 require_once dirname(__FILE__) . '/../../../../core/php/core.inc.php';
 
 class publiemeteo extends eqLogic
 {
-    /*     * *************************Attributs****************************** */
-
-
-    /*     * ***********************Methode static*************************** */
-
     public static function cron15()
     {
         log::add('publiemeteo', 'debug', 'Appel a cron15');
@@ -126,11 +120,9 @@ class publiemeteo extends eqLogic
             "pointrosee" => "point de rosée en °C"
         );
     }
-
-    /*     * *********************Methode d'instance************************* */
 }
 
 class publiemeteoCmd extends cmd
 {
-    /*     * **********************Getteur Setteur*************************** */
+
 }

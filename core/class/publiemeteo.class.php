@@ -122,7 +122,3 @@ class publiemeteo extends eqLogic
     }
 }
 
-class publiemeteoCmd extends cmd
-{
-
-}

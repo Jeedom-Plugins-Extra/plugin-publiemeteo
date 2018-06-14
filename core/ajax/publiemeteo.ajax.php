@@ -21,26 +21,27 @@ try {
     include_file('core', 'authentification', 'php');
 
     if (!isConnect('admin')) {
-        throw new Exception(__('401 - Accès non autorisé', __FILE__));
+        throw new \Exception(__('401 - Accès non autorisé', __FILE__));
     }
 
     if (init('action') == 'ResetKey') {
-		config::save('api', publiemeteo::generatePassword(), 'publiemeteo');
-		ajax::success(config::byKey('api', 'publiemeteo'));
+        config::save('api', publiemeteo::generatePassword(), 'publiemeteo');
+        ajax::success(config::byKey('api', 'publiemeteo'));
     }
 
-	if (init('action') == 'savepubliemeteo') {
-		foreach (json_decode(init('config')) as $key => $indicateur) {
-			if ( $indicateur != "" )
-				config::save($key, $indicateur, 'publiemeteo');
-			else
-				config::remove($key, 'publiemeteo');
-		}
-		ajax::success();
-	}
-    throw new Exception(__('Aucune methode correspondante à : ', __FILE__) . init('action'));
+    if (init('action') == 'savepubliemeteo') {
+        foreach (json_decode(init('config')) as $key => $indicateur) {
+            if ($indicateur != "") {
+                config::save($key, $indicateur, 'publiemeteo');
+            } else {
+                config::remove($key, 'publiemeteo');
+            }
+        }
+        ajax::success();
+    }
+    throw new \Exception(__('Aucune methode correspondante à : ', __FILE__) . init('action'));
     /*     * *********Catch exeption*************** */
 } catch (Exception $e) {
     ajax::error(displayException($e), $e->getCode());
 }
-?>
+ 

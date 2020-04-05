@@ -80,7 +80,7 @@ class publiemeteo extends eqLogic {
 			}
 			if ( $data_to_send )
 			{
-				$url = 'http://weatherstation.wunderground.com/weatherstation/updateweatherstation.php?'.http_build_query($post);
+				$url = 'http://rtupdate.wunderground.com/weatherstation/updateweatherstation.php?'.http_build_query($post);
 				log::add('publiemeteo','debug','Envoie des donnees via '.preg_replace("/PASSWORD=[^&]*&/", "PASSWORD=XXXXX&", $url));
 				$content = @file_get_contents($url);
 				if ( $content != "success\n" )
